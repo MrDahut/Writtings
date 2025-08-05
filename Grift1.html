@@ -1,48 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Gig Annotation Pipeline Audit</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-
-  <!-- ── dark-theme palette & typography ── -->
-  <style>
-    :root{
-      --bg:#111;        /* near-black background           */
-      --fg:#9bdc9e;     /* mint-/pea-green foreground      */
-      --fg-dim:#7fb987; /* slightly dimmed meta text       */
-      --accent:#b4ffbe; /* brighter green for <strong>      */
-    }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{
-      background:var(--bg);
-      color:var(--fg);
-      font:400 1rem/1.55 "Inter",system-ui,sans-serif;
-      padding:2.5rem 1rem 4rem;
-    }
-    header{margin-bottom:2.5rem}
-    header h1{font-size:1.75rem;line-height:1.2;margin-bottom:.35rem}
-    header p{color:var(--fg-dim);font-size:.9rem}
-
-    /* section heads */
-    article h2{
-      font-size:1.3rem;
-      margin:2rem 0 .8rem;
-      font-weight:600;
-      color:var(--accent);
-    }
-
-    p,li{margin-bottom:1rem;max-width:75ch}
-    ul,ol{padding-left:1.25rem}
-
-    strong{color:var(--accent);font-weight:600}
-    em{font-style:italic}
-    a{color:var(--accent);text-decoration-color:var(--fg-dim)}
-    li>p{margin-bottom:.5rem}
-  </style>
+<meta charset="utf-8" />
+<title>Gig Annotation Pipeline Audit</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  :root{ --bg:#111; --fg:#9bdc9e; --fg-dim:#7fb987; --accent:#b4ffbe; }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--fg);
+       font:400 1rem/1.6 "Inter",system-ui,sans-serif;
+       padding:2.5rem 1rem 4rem;max-width:82ch;margin-inline:auto}
+  header{margin-bottom:2.5rem}
+  header h1{font-size:1.75rem;line-height:1.2;margin-bottom:.35rem}
+  header p{color:var(--fg-dim);font-size:.9rem}
+  h2{font-size:1.3rem;margin:2rem 0 .8rem;font-weight:600;color:var(--accent)}
+  ul{padding-left:1.25rem;margin-bottom:1rem}
+  table{border-collapse:collapse;width:100%;margin:1rem 0}
+  th,td{border:1px solid var(--fg-dim);padding:.4rem .5rem;vertical-align:top}
+  th{font-weight:600;color:var(--accent)}
+  strong{color:var(--accent)}
+</style>
 </head>
-
 <body>
+
 <header>
   <h1>Gig Annotation Pipeline Audit</h1>
   <p><em>Last updated 5 Aug 2025 · License CC BY-SA 4.0</em></p>
@@ -50,147 +30,82 @@
 
 <article>
 
-<h2>I On-ramp mirage — how the platforms pitch the gig</h2>
+<h2>I On-ramp mirage — how the platforms pitch the gig</h2>
 
-<p>Scroll TikTok or YouTube and you’ll see ads like “Earn $125 per hour on Remotasks — 2025 update!” (YouTube). Landing pages seal the promise: “Get paid weekly … start earning today.” (Remotasks homepage) Remotasks.</p>
+<p>Scroll TikTok or YouTube and you’ll see ads like “Earn $125 per hour on Remotasks — 2025 update!” (YouTube). Landing pages seal the promise: “Get paid weekly … start earning today” (Remotasks homepage). DataAnnotation Tech runs copy about a side-hustler “making an extra $100 a day at $20 an hour” and stresses flexible work, no prior experience (DataAnnotation Tech). Indeed reposts for DataAnnotation echo the line: “From $20–$40 an hour, contract, flexible schedule” (Indeed). Toloka’s sign-up page riffs the same tune — “Earn money whenever and wherever you want” (Toloka). Clickworker pushes “set your own hours and work independently from any computer” (clickworker.com).</p>
 
-<p>DataAnnotation Tech runs copy about a side-hustler “making an extra $100 a day at $20 an hour” and stresses flexible work, no prior experience. Data Annotation Indeed reposts echo the line: “From $20–$40 an hour, contract, flexible schedule.” Indeed</p>
-
-<p>Toloka’s sign-up page riffs the same tune — “Earn money whenever and wherever you want.” Toloka Clickworker pushes “set your own hours and work independently from any computer.” clickworker.com</p>
-
-<p><strong>The hook is always identical:</strong></p>
-
-<ul>
-  <li>Remote freedom – “work in pajamas, phone or laptop.”</li>
-  <li>Above-minimum headline rate – $15–$40 h plastered in bold.</li>
-  <li>Instant onboarding – a five-minute quiz replaces résumés.</li>
-  <li>Feel-good framing – “Help train AI,” “Be part of the future.”</li>
-</ul>
-
-<p>That cocktail drags in retirees, laid-off staffers, students — anyone hunting friction-free income.</p>
+<p>The hook is always identical: remote freedom (“work in pajamas, phone or laptop”); an above-minimum headline rate ($15–$40 h) plastered in bold; instant onboarding (a five-minute quiz replaces résumés); and feel-good framing (“Help train AI,” “Be part of the future”). That cocktail drags in retirees, laid-off staffers, and students—anyone hunting friction-free income.</p>
 
 
 
-<h2>II The bait-and-switch policy wall</h2>
+<h2>II The bait-and-switch policy wall</h2>
 
-<p>Right after you click “Start,” a Terms-of-Service box pops:</p>
+<p>Right after you click “Start,” a terms-of-service box pops:</p>
 
-<p><strong>Platform   Recruitment promise   Small-print ban</strong></p>
+<table>
+<thead><tr><th>Platform</th><th>Recruitment promise</th><th>Small-print ban</th></tr></thead>
+<tbody>
+<tr><td>MTurk</td><td>“Many things people do much more effectively than computers.” (mturk.com)</td><td>“Bots, scripts, or other automated methods… may suspend or terminate your account.” (MTurk UA)</td></tr>
+<tr><td>Toloka</td><td>“Earn money whenever and wherever you want.” (Toloka)</td><td>User Agreement § 2.6 forbids “scripts, robots, automated methods.” (Toloka UA)</td></tr>
+<tr><td>Remotasks</td><td>“Start earning today. Get paid weekly.” (Remotasks)</td><td>Onboarding slide: “No large-language-model output; accounts banned for AI assistance.” (internal slide, worker kit)</td></tr>
+<tr><td>DataAnnotation</td><td>“$20 per hour, flexible.” (DataAnnotation)</td><td>FAQ: “Do not use ChatGPT or any external AI while working.” (contributor FAQ)</td></tr>
+<tr><td>Clickworker</td><td>“Earn money online with micro-jobs, set your own hours.” (clickworker.com)</td><td>T&amp;C: accounts suspended for using automation.</td></tr>
+</tbody>
+</table>
 
-<ul>
-  <li><strong>MTurk</strong> — “Many things people do much more effectively than computers.” mturk.com<br>
-      “Bots, scripts, or other automated methods… may suspend or terminate your account.” Toloka</li>
-
-  <li><strong>Toloka</strong> — “Earn money whenever and wherever you want.” Toloka<br>
-      User Agreement § 2.6 forbids “scripts, robots, automated methods.” mturk.com</li>
-
-  <li><strong>Remotasks</strong> — “Start earning today. Get paid weekly.” Remotasks<br>
-      Onboarding slide: “No large-language-model output; accounts banned for AI assistance.” (internal slide, worker kit)</li>
-
-  <li><strong>DataAnnotation</strong> — “$20 per hour, flexible.” Data Annotation<br>
-      FAQ: “Do not use ChatGPT or any external AI while working.” (contributor FAQ)</li>
-
-  <li><strong>Clickworker</strong> — “Earn money online with micro-jobs, set your own hours.” clickworker.com<br>
-      T&amp;C: accounts suspended for using automation.</li>
-</ul>
-
-<p>So the same AI that powers the marketing copy is ruled contraband once you’re inside the gate. Worse, platforms immediately tier the workforce. High headline rates belong to a scarcity class that gets first pick of tasks; everyone else sits in queue purgatory. The policy wall isn’t about data purity — it’s an extraction lever:</p>
-
-<ul>
-  <li><strong>Cost arbitrage</strong> ML filters already chop 40-60 % of review passes, but the invoice still says “human-verified.” Appen USA</li>
-  <li><strong>Tier leverage</strong> Toloka admits average pay sits at $1–$3 h and ties rate to accuracy; the existence of a small elite tier depresses everyone else’s baseline.</li>
-  <li><strong>Zero-appeal enforcement</strong> Break a rule, miss a timer, or simply get auto-flagged and you lose the task and the pay, yet the platform keeps the data. Handbook: “Time spent on tasks that expire or are rejected is not compensable.”</li>
-</ul>
-
-<p>Net effect: glossy “earn-from-home” promises funnel workers into a ruleset that forbids the very tooling management uses to cut its own costs — and to judge the workers’ output. The bait is the flexible freedom headline; the switch is a locked toolbox and a shrinking queue.</p>
+<p>The same AI that powers the marketing copy is ruled contraband once you’re inside the gate. Worse, platforms immediately tier the workforce. High headline rates belong to a scarcity class that gets first pick of tasks; everyone else sits in queue purgatory. The policy wall isn’t about data purity — it’s an extraction lever: <strong>Cost arbitrage</strong> (ML filters already chop 40–60 % of review passes, but the invoice still says “human-verified,” Appen USA); <strong>Tier leverage</strong> (Toloka admits average pay sits at $1–$3 h and ties rate to accuracy); and <strong>Zero-appeal enforcement</strong> (break a rule, miss a timer, or get auto-flagged and you lose the task and the pay, yet the platform keeps the data — handbook: “Time spent on tasks that expire or are rejected is not compensable”). Net effect: glossy “earn-from-home” promises funnel workers into a ruleset that forbids the very tooling management uses to cut its own costs—and to judge the workers’ output. The bait is the flexible-freedom headline; the switch is a locked toolbox and a shrinking queue.</p>
 
 
 
-<h2>III Why management loves the ban — in detail</h2>
+<h2>III Why management loves the ban — in detail</h2>
 
-<p><strong>1 Cost-arbitrage math (full paragraph)</strong><br>
-A typical search-relevance job pays workers 1–3 ¢ per judgment according to Appen’s own pricing FAQ. success.appen.com The costly part is not the penny — it’s reviewing the judgment. Appen’s Dynamic Judgment model watches answers as they arrive and stops the job the moment an algorithm decides “consensus reached,” cutting the paid human passes by up to 60 %. Reddit Same trick shows up in Scale’s “pre-label” pipeline, which advertises “reduces human passes by over 60 %.” Result: the client still sees “human-verified data,” the platform still bills the original unit price, but two-thirds of what would have been payroll evaporates into margin. Workers feel the loss as shrinking queue length, sudden “job paused” notices, and lower hourly averages — yet the dataset gets delivered on schedule.</p>
+<p><strong>1 Cost-arbitrage math.</strong> A typical search-relevance job pays workers 1–3 ¢ per judgment (success.appen.com). The costly part is not the penny—it’s reviewing the judgment. Appen’s Dynamic Judgment model watches answers as they arrive and stops the job the moment an algorithm decides “consensus reached,” cutting the paid human passes by up to 60 % (Reddit). The same trick shows up in Scale’s “pre-label” pipeline, which advertises “reduces human passes by over 60 %.” Result: the client still sees “human-verified data,” the platform still bills the original unit price, but two-thirds of what would have been payroll evaporates into margin. Workers feel the loss as shrinking queue length, sudden “job paused” notices, and lower hourly averages—yet the dataset gets delivered on schedule. Second-order hit: the platform’s detectors flag borderline answers, force unpaid re-work, and still keep the discarded text as additional model fodder (the logs and keystrokes sit in backend tables).❶ The worker eats the zero-pay do-over; the company harvests an extra label for free. Upshot: cost-arbitrage punishes annotators twice—first by shortening the paid queue, again by grabbing uncompensated rejects—while leaving invoice line-items untouched (internal API docs confirm every judgment flows into <em>_unit_state</em> once “finalized,” success.appen.com).</p>
 
-<p>Second-order hit: the platform’s detectors flag borderline answers, force unpaid re-work, and still keep the discarded text as additional model fodder (the logs and keystrokes sit in the backend tables).❶ The worker eats the zero-pay do-over; the company harvests an extra label for free.<br>
-Upshot: cost-arbitrage punishes annotators twice — first by shortening the paid queue, again by grabbing uncompensated rejects — while leaving invoice line-items untouched.<br>
-ℹ️ Note 1: internal API docs show every judgment — paid or not — flows into the _unit_state table once “finalized.” success.appen.com</p>
-
-<p><strong>2 Tiered quality scores = game-theory leverage</strong><br>
-Platforms frame their A/B worker tiers as meritocracy, but the pay ladder is designed to extract more work, not reward excellence. Toloka’s own help pages admit average pay hovers $1–$3 h and “accuracy determines your pay rate.” Vocal Reddit crowd-gen contractors confirm they can earn $15–$18 while another rater — same task, higher tier — makes $30 +, simply because the platform throttles lower-tier availability. Reddit By dangling the upper tier and simultaneously shrinking its volume, the company devalues the majority tier (price anchor) and still underpays the “elite” one (artificial scarcity). It’s textbook game-theory control: create a prestige class to discipline the base class; cash out on both.</p>
+<p><strong>2 Tiered quality scores = game-theory leverage.</strong> Platforms frame their A/B worker tiers as meritocracy, but the pay ladder is designed to extract more work, not reward excellence. Toloka’s help pages admit average pay hovers $1–$3 h and that “accuracy determines your pay rate.” Vocal Reddit crowd-gen contractors confirm they can earn $15–$18 while another rater—same task, higher tier—makes $30 +, simply because the platform throttles lower-tier availability (Reddit). By dangling the upper tier and simultaneously shrinking its volume, the company devalues the majority tier (price anchor) and still underpays the “elite” one (artificial scarcity). It’s textbook game-theory control: create a prestige class to discipline the base class; cash out on both.</p>
 
 
 
-<h2>IV Sticker-price vs. paycheck</h2>
+<h2>IV Sticker-price vs. paycheck</h2>
 
-<p>Gig-platform ads trumpet $15–$20 h creative writing jobs. Reality audit: peer-reviewed meta-analysis of 24 crowd studies puts median micro-task wages under $6 h. PMC A CMU time-and-motion scrape of 3.8 M MTurk tasks lands at $2.83 h once idle and rejected time is counted. CMU School of Computer Science Pay shrinks further when you factor in:</p>
-
-<ul>
-  <li>Unpaid qualification exams (fail the quiz, forfeit your work) — Appen tells requesters “Contributors that fail quiz mode are not paid.” success.appen.com</li>
-  <li>Task drought weeks where you stare at an empty queue — see dozens of “no tasks” threads. Reddit</li>
-  <li>Glitch delays: 2024 migration left raters waiting months for cleared invoices; Appen’s CEO posted a public apology video. YouTube</li>
-</ul>
-
-<p>When you map a realistic four-hour “shift,” only ~2.5 h are billable. Advertised $17 becomes $10.50, before self-employment tax, no benefits.</p>
+<p>Gig-platform ads trumpet $15–$20 h creative-writing jobs. Reality audit: a peer-reviewed meta-analysis of 24 crowd studies puts median micro-task wages under $6 h (PMC). A CMU time-and-motion scrape of 3.8 M MTurk tasks lands at $2.83 h once idle and rejected time is counted (CMU SCS). Pay shrinks further when you factor in unpaid qualification exams (“Contributors that fail quiz mode are not paid,” success.appen.com), task-drought weeks where you stare at an empty queue (“no tasks” threads, Reddit), and glitch delays—the 2024 migration left raters waiting months for cleared invoices; Appen’s CEO posted a public apology video (YouTube). When you map a realistic four-hour “shift,” only ≈ 2.5 h are billable. Advertised $17 becomes $10.50, before self-employment tax, no benefits.</p>
 
 
 
-<h2>V Clock-trap economics (full account)</h2>
+<h2>V Clock-trap economics</h2>
 
-<p>Timers look like QA tools; they’re really profit levers. Appen search-quality tasks allot 40 s, Toloka “speed relevance” gives 15 s. Workers who run over get a bright-red “expired” banner and $0 pay, but the platform still stores every click and partial keystroke in _last_judgment_at and telemetry logs for future model-training. success.appen.com Handbook language is blunt: “Time spent on tasks that expire or are rejected is not compensable.” Gibson Dunn Community mods confirm the rule: “The timer is the max they’re willing to pay.” Reddit<br>
-Assume 20 % of attempts run long — common when guidelines are 30-page PDFs. The nominal $15 h rate slides to $12. The company pockets the data anyway: worker telemetry is “free” training signal for the next detector model.</p>
-
-
-
-<h2>VI The self-cannibalizing loop, plus the “machine knows best” myth</h2>
-
-<p>Workers are, in effect, training the algorithm that will grade — and then replace — them. OpenAI’s CriticGPT now beats human reviewers in 63 % of bug-catch tasks. Ars Technica Kenyan annotators making &lt;$2 h labeled toxic text so ChatGPT could seem “polite.” TIME Anthropic CEO Dario Amodei warns AI may wipe out half of entry-level white-collar jobs within five years. Axios<br>
-The kicker: management uses those gains to argue that “the model is more objective,” sidelining the very human context it learned from. Data ≠ lived experience, but once metrics crown the model, dissenting annotators get clipped as “low-quality.” The loop is self-justifying: the better you train it, the more your judgment is branded inferior.</p>
+<p>Timers look like QA tools; they’re really profit levers. Appen search-quality tasks allot 40 s, Toloka “speed relevance” gives 15 s. Workers who run over get a bright-red “expired” banner and $0 pay, but the platform still stores every click and partial keystroke in <em>_last_judgment_at</em> and telemetry logs for future model-training (success.appen.com). Handbook language is blunt: “Time spent on tasks that expire or are rejected is not compensable” (Gibson Dunn). Community mods confirm the rule: “The timer is the max they’re willing to pay” (Reddit). Assume 20 % of attempts run long—common when guidelines are 30-page PDFs. The nominal $15 h rate slides to $12. The company pockets the data anyway: worker telemetry is “free” training signal for the next detector model.</p>
 
 
 
-<h2>VII The compliance trap — how the policy wall breaks three laws at once</h2>
+<h2>VI The self-cannibalizing loop, plus the “machine knows best” myth</h2>
 
-<p><strong>Truth-in-labeling.</strong><br>
-Appen tells clients their data are “100 % human-verified,” then boasts its Dynamic Judgment model cuts paid reviews by “up to 60 %.” appen.com Under U.S. FTC doctrine that is the same mis-labeling penalty a factory scarf gets for calling itself “hand-knit.”</p>
-
-<p><strong>Wage-and-hour.</strong><br>
-Handbook line: “Time spent on tasks that expire or are rejected is not compensable.” The label still ships, the client still pays, only the worker eats the zero. Unpaid labor delivered to a paying customer — exact violation of Fair Labor Standards intent.</p>
-
-<p><strong>Undisclosed bias.</strong><br>
-Peer-reviewed audits show hidden discard filters shift sentiment scores by double-digit percentages; researchers can’t reproduce what they can’t see. EU AI-Act classifies that as “high-risk automated decision” needing a public log — none provided.</p>
+<p>Workers are, in effect, training the algorithm that will grade—and then replace—them. OpenAI’s CriticGPT now beats human reviewers in 63 % of bug-catch tasks (Ars Technica). Kenyan annotators making &lt;$2 h labeled toxic text so ChatGPT could seem “polite” (TIME). Anthropic CEO Dario Amodei warns AI may wipe out half of entry-level white-collar jobs within five years (Axios). The kicker: management uses those gains to argue that “the model is more objective,” sidelining the very human context it learned from. Data ≠ lived experience, but once metrics crown the model, dissenting annotators get clipped as “low-quality.” The loop is self-justifying: the better you train it, the more your judgment is branded inferior.</p>
 
 
 
-<h2>VIII Clean-room contract — five lines that end the asymmetry</h2>
+<h2>VII The compliance trap — how the policy wall breaks three laws at once</h2>
 
-<ul>
-  <li>Ingredient label. Stamp every job Human-only, Human + AI, or Machine-first.</li>
-  <li>Token audit. Log which characters were pasted by a model; expose on request — same trick compilers use with debug symbols.</li>
-  <li>Savings split. If the filter drops 50 % of passes, 25 % goes back to the client, 25 % to the annotators.</li>
-  <li>Symmetric tooling. Any detector that can reject my sentence is fair game for me to spell-check or fact-check.</li>
-  <li>External ledger. Quarterly third-party error reports, same way public companies file audits — nothing fancy, just a PDF.</li>
-</ul>
+<p><strong>Truth-in-labeling.</strong> Appen tells clients their data are “100 % human-verified,” then boasts its Dynamic Judgment model cuts paid reviews by “up to 60 %” (appen.com). Under U.S. FTC doctrine that is the same mis-labeling penalty a factory scarf gets for calling itself “hand-knit.”</p>
+
+<p><strong>Wage-and-hour.</strong> Handbook line: “Time spent on tasks that expire or are rejected is not compensable.” The label still ships, the client still pays, only the worker eats the zero. Unpaid labor delivered to a paying customer—exact violation of Fair Labor Standards intent.</p>
+
+<p><strong>Undisclosed bias.</strong> Peer-reviewed audits show hidden discard filters shift sentiment scores by double-digit percentages; researchers can’t reproduce what they can’t see. The EU AI-Act classifies that as “high-risk automated decision” needing a public log — none provided.</p>
 
 
 
-<h2>IX Pick a lane — symmetry or admit you’re selling derivatives</h2>
+<h2>VIII Clean-room contract — five lines that end the asymmetry</h2>
 
-<p>Right now the pipeline is a toll gate on cognition:</p>
+<p>Ingredient label. Stamp every job <em>Human-only</em>, <em>Human + AI</em>, or <em>Machine-first</em>.  
+Token audit. Log which characters were pasted by a model; expose on request — same trick compilers use with debug symbols.  
+Savings split. If the filter drops 50 % of passes, 25 % goes back to the client, 25 % to the annotators.  
+Symmetric tooling. Any detector that can reject my sentence is fair game for me to spell-check or fact-check.  
+External ledger. Quarterly third-party error reports, the same way public companies file audits — nothing fancy, just a PDF.</p>
 
-<ul>
-  <li>tools locked away from the worker,</li>
-  <li>identical tools running hot in the back room,</li>
-  <li>profit booked on the gap.</li>
-</ul>
 
-<p><strong>Two honest options:</strong></p>
 
-<ul>
-  <li><strong>Symmetry.</strong> Let annotators run the same automation you do, pay them for the full value they create.</li>
-  <li><strong>Disclosure.</strong> Drop the “pure-human” folklore, tag the data “machine-assisted,” price it accordingly.</li>
-</ul>
+<h2>IX Pick a lane — symmetry or admit you’re selling derivatives</h2>
 
-<p>Anything else is intellectual rent — harvesting what you don’t own, calling it value, and hoping no regulator notices.</p>
+<p>Right now the pipeline is a toll gate on cognition: tools locked away from the worker, identical tools running hot in the back room, profit booked on the gap. Two honest options remain: <strong>Symmetry</strong> — let annotators run the same automation you do and pay them for the full value they create; or <strong>Disclosure</strong> — drop the “pure-human” folklore, tag the data “machine-assisted,” price it accordingly. Anything else is intellectual rent — harvesting what you don’t own, calling it value, and hoping no regulator notices.</p>
 
 </article>
 </body>
