@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Charset & Viewport -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Title & SEO -->
+  <title>Phase One Wrap-Up & What’s Next — Enshittification Notes</title>
+  <meta name="description" content="Phase One wrap-up, next steps, and a blunt account of AI platform enshittification impacting long-form, high-context work.">
+  <link rel="canonical" href="https://morse.works/" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Phase One Wrap-Up & What’s Next — Enshittification Notes">
+  <meta property="og:description" content="Phase One wrap-up, next steps, and a blunt account of AI platform enshittification impacting long-form, high-context work.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://morse.works/">
+  <meta property="og:site_name" content="Independent Thought">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Phase One Wrap-Up & What’s Next — Enshittification Notes">
+  <meta name="twitter:description" content="Phase One wrap-up, next steps, and a blunt account of AI platform enshittification impacting long-form, high-context work.">
+
+  <!-- Styles: dark base, mint text -->
+  <style>
+    :root{
+      --bg: #0b0f14;           /* deep slate-blue black */
+      --panel: #0f141b;        /* slightly lighter for cards */
+      --text: #d2ffe5;         /* mint-leaning light text */
+      --text-dim: #a5e9c8;     /* dimmed mint */
+      --accent: #aaf5c8;       /* mint accent */
+      --accent-strong: #7df0b3;/* stronger mint for hover/focus */
+      --muted: #1a2230;        /* borders/dividers */
+      --code: #d7ffe9;         /* code text */
+      --code-bg: #112022;      /* code background */
+      --maxw: 860px;
+    }
+
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+      line-height: 1.6;
+      text-rendering: optimizeLegibility;
+    }
+
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 28px 18px 80px;
+    }
+
+    header.site {
+      border-bottom: 1px solid var(--muted);
+      margin-bottom: 28px;
+      padding-bottom: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .brand a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .brand small {
+      color: var(--text-dim);
+      opacity: 0.85;
+      font-weight: 500;
+    }
+
+    article {
+      background: transparent;
+    }
+
+    h1, h2, h3 {
+      color: var(--accent);
+      line-height: 1.25;
+      margin: 1.2em 0 0.4em;
+    }
+    h1 { font-size: clamp(1.9rem, 2.2vw + 1.2rem, 2.4rem); }
+    h2 { font-size: clamp(1.35rem, 1.6vw + 0.9rem, 1.6rem); }
+    h3 { font-size: clamp(1.15rem, 1.2vw + 0.85rem, 1.3rem); }
+
+    p { margin: 0.85em 0; }
+
+    strong { color: var(--text); }
+
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: rgba(170,245,200,0.45);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+    a:hover, a:focus {
+      color: var(--accent-strong);
+      text-decoration-color: rgba(125,240,179,0.8);
+    }
+
+    blockquote{
+      margin: 1em 0;
+      padding: 0.75em 1em;
+      border-left: 3px solid var(--accent);
+      background: var(--panel);
+      color: var(--text);
+      border-radius: 8px;
+    }
+
+    code, pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      background: var(--code-bg);
+      color: var(--code);
+      border: 1px solid var(--muted);
+      border-radius: 8px;
+    }
+    code { padding: 0.1em 0.35em; }
+    pre { padding: 0.9em 1em; overflow-x: auto; }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--muted);
+      margin: 1.6em 0;
+    }
+
+    .meta {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+    }
+
+    footer.site {
+      margin-top: 48px;
+      border-top: 1px solid var(--muted);
+      color: var(--text-dim);
+      padding-top: 18px;
+      font-size: 0.95rem;
+    }
+
+    /* Small screens */
+    @media (max-width: 560px) {
+      .wrap { padding: 22px 14px 64px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="site" role="banner">
+      <div class="brand">
+        <a href="/" title="Home">Independent Thought</a>
+        <small>morse.works</small>
+      </div>
+      <div class="meta">Last updated: <time datetime="2025-08-09">August 9, 2025</time></div>
+    </header>
+
+    <main role="main">
+      <article itemscope itemtype="https://schema.org/Article">
+        <header>
+          <h1 itemprop="headline">Phase One Wrap-Up &amp; What’s Next</h1>
+        </header>
+
+        <section itemprop="articleBody">
+          <p>Well folks, Phase One didn’t blow up in my face — I’ve made it out alive, learned the ropes, and gotten a decent handle on what this AI can actually do… and just as important, what it only <em>pretends</em> it can do.</p>
+
+          <p>It’s been a solid translator for my ADHD-clipped half-sentences and typo-riddled shorthand — turning them into full thoughts instead of keyboard static. My typing is garbage, and Phase Two will have me working on that. But more important, I’ve realized I need to pick up <strong>Python, Pandas, API work</strong>, and the rest of the machine shop of modern data work.</p>
+
+          <p>It’s one thing to understand how a mess of Webber, Smith, Ricardo, and Bernays collides with I. M. Pei, and how the ricochet pulls in everyone from Dr. Phil to the nameless bureaucrat shaping zoning policy. It’s another thing to <em>show</em> people those connections without knowing how to stitch the damn data together in the first place.</p>
+
+          <p>AI’s just an aid. It’s not a brain. And I’ve been burned by the one thing that’ll kill any operator: not knowing what I don’t know. Too many times I’ve handed it a task, trusted it was doing what I asked, and only later realized I didn’t even know how to tell if it had. That gap is closing — by force.</p>
+
+          <p>I’ve got the background, the cross-disciplinary depth, and the capacity to pull in high-value work. If I can sharpen my tools and execution, there’s no reason I can’t be pulling mid-to-high six figures. But before I start cranking out major datasets, I’m slowing the writing output. The move’s coming up, and I’ve got infrastructure to build.</p>
+
+          <p>For the next few months, I’ll publish once a week, then take a short break. In that break, I’ll be wiring up a home data server and building my own open-source processing rig. That’s my line in the sand — owning the means of computation so I’m not bent over a barrel when someone changes the rules.</p>
+
+          <p>When I come back, the first major project will be on calories — global and local, qualitative and quantitative, torn apart until the picture’s clear. We’ve been lying to ourselves about population and food security for decades. I suspect we’re in deep trouble, but I want the data to prove or disprove it, not just my gut.</p>
+
+          <p>The hardwood-and-carbon project will be coming back online too, with a firewood reclamation operation aimed for September. Maybe some educational work if the timing’s right.</p>
+
+          <hr />
+
+          <h2>On the Enshittification of AI Tools</h2>
+
+          <p>Let’s call it what it is: <em>enshittification</em>. Doctorow laid it out plain — first the platform is great for users, then it’s great for the company, then it’s not great for anyone except shareholders. I’ve just had the misfortune of watching that curve hit in real time.</p>
+
+          <p>When I started, I could switch between multiple models — quick and cheap for edits, deep-reasoning for structural work, balanced for general writing. Now? My Plus account is locked to a single “flagship” model. Powerful, sure — but a token hog that chokes on long documents and nukes my ability to balance cost and depth. For high-context, multi-pass work, that’s a straight downgrade.</p>
+
+          <p>This isn’t progress. It’s monetization dressed as improvement, and it breaks the workflows of anyone doing serious, sustained work. That’s why I’m building my own stack: so my tools can’t be silently gutted by a business plan I didn’t agree to.</p>
+
+          <hr />
+
+          <h2>Contact</h2>
+          <p>Email’s on the site. If you’ve got a real project worth talking about, reach out. If you’re a scammer, I’ve got a guy who loves doxxing scammers, and I’ll hand-deliver your info.</p>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site" role="contentinfo">
+      <div>License: CC BY-SA 4.0 (unless noted)</div>
+      <div>© <span id="year"></span> Independent Thought · morse.works</div>
+    </footer>
+  </div>
+
+  <script>
+    // set footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
