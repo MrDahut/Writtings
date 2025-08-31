@@ -1,71 +1,224 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Morse Works | Archive Index</title>
+  <title>morse.works — Independent Thought</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Writings and research by Shiloh Morse—public intellectual, researcher, and systems strategist.">
+  <meta name="description" content="Independent Thought — a public workshop for human-centered research, writing, and design — scaffolded by AI, governed by rigor.">
+  <link rel="canonical" href="https://morse.works/">
+  <meta name="robots" content="index,follow,noarchive,noimageai,noai">
+
+  <!-- Social cards (add /og.png when ready) -->
+  <meta property="og:title" content="morse.works — Independent Thought">
+  <meta property="og:description" content="A public workshop for human-centered research, writing, and design — scaffolded by AI, governed by rigor.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://morse.works/">
+  <meta property="og:image" content="https://morse.works/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/favicon.ico">
   <style>
-    body { background: #181818; color: #eee; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; }
-    .container { max-width: 700px; margin: 3rem auto 2rem; padding: 2rem; background: #222; border-radius: 16px; box-shadow: 0 6px 32px #0002; }
-    h1 { color: #74fa7b; font-size: 2.5rem; letter-spacing: 1px; margin-bottom: 0.5rem;}
-    p.lead { color: #b5f3c6; margin-bottom: 2rem; font-size: 1.15rem;}
-    ul { list-style: none; padding: 0; margin: 0; }
-    li { margin-bottom: 1.2rem; }
-    a { color: #74fa7b; text-decoration: none; font-size: 1.15rem; }
-    a:hover { text-decoration: underline; color: #fff48c; }
-    .file-note { color: #999; font-size: 0.97rem; }
-    @media (max-width: 600px) {
-      .container { padding: 1rem; }
-      h1 { font-size: 2rem; }
-      a { font-size: 1rem; }
+    :root{
+      --bg:#0b0e12; --panel:#141a20; --panel2:#11161c;
+      --text:#d9ffe8; --muted:#9dd7b8; --accent:#74fa7b;
+      --border:#1b232c; --radius:16px; --shadow:0 8px 32px rgba(0,0,0,.35);
+      --w:980px;
     }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%}
+    body{
+      background: radial-gradient(1200px 700px at 15% -10%, #16242b 0, var(--bg) 45%) no-repeat, var(--bg);
+      color:var(--text);
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;
+      letter-spacing:.1px;
+    }
+    a{color:var(--accent); text-decoration:none; border-bottom:1px solid transparent}
+    a:hover{border-bottom-color:var(--accent)}
+    .wrap{max-width:var(--w); margin:0 auto; padding:38px 18px 80px}
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{width:40px;height:40px;border-radius:50%;background:conic-gradient(from 180deg,#0f1a20,#1a2a2f,#163128,#0f1a20);border:1px solid var(--border);box-shadow:var(--shadow)}
+    h1{font-size:20px;margin:0}
+    nav{display:flex; gap:16px; flex-wrap:wrap; font-size:14px}
+    .panel{background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow)}
+    .section{margin-top:18px; padding:18px 22px}
+    .section h2{margin:0 0 .4rem 0; font-size:18px}
+    .muted{color:var(--muted)}
+    .grid{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    @media (max-width:800px){.grid{grid-template-columns:1fr}}
+    .searchbar{display:flex; gap:12px; align-items:center; margin-top:10px}
+    .search{flex:1 1 280px; background:var(--panel2); border:1px solid var(--border); border-radius:12px; padding:10px 12px; color:var(--text); outline:none}
+    ul{list-style:none; padding:0; margin:0}
+    li{padding:9px 0; border-bottom:1px dashed #22313a}
+    li:last-child{border-bottom:none}
+    footer{margin-top:22px; padding:14px 18px; font-size:.92rem; color:var(--muted)}
+    .pill{display:inline-block; font-size:.78rem; padding:.1rem .5rem; border:1px solid var(--border); border-radius:999px; background:var(--panel2); color:var(--muted)}
+    /* small caps headings inside lists for consistency */
+    .cap{font-variant: all-small-caps; letter-spacing:.8px; color:var(--muted); margin:0 0 .2rem}
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Morse Works Archive</h1>
-    <p class="lead">
-      Writings, essays, and research by Shiloh Morse. Systems strategy, conflict theory, philosophy, technology, and more.<br>
-      <span class="file-note">Click to read each article. All works © Shiloh Morse.</span>
-    </p>
-    <ul>
-      <li><a href="LINE.html">Line in the Western sands.</a></li>
-      <li><a href="Method.html">Methodology.</a></li>
-      <li><a href="Lesson.html">To: My,your,any child.</a></li>
-      <li><a href="newsom_colbert_axis.html"> True ticket to ride</a></li>
-      <li><a href="Savage_inheritance_cited.html">Our Savage Land part 1</a></li>
-      <li><a href="biology_of_a_savage_nation.html">Our Savage land Part 2</a></li>     
-      <li><a href="Hit.html">Ambush of the US Dollar</a></li>
-      <li><a href="Phae1.html">What the future holds.</a></li>
-      <li><a href="Grift1.html">Grift Economy</a></li>
-      <li><a href="Ahem.html">Ahem—Um—Excuse Me Please, But If You Want to Make America Great Again/a></li>
-      <li><a href="CO2.html">Failure to Protect — CO₂ Deregulation and Legal Immunity</a></li>
-      <li><a href="BACN8.html">Simulation-Based Agent Modeling (SBAM) White Paper</a></li>
-      <li><a href="Afra.html">Afra</a></li>
-      <li><a href="CHrisC.html">Digital Spectacle and Structural Failure (Chris Chan)</a></li>
-      <li><a href="DecisionFatigue2025ExecutiveFunctionCollapsei.html">Decision Fatigue 2025: Executive Function Collapse</a></li>
-      <li><a href="FutureTidesRevisitingtheSystemsBlindSpotinU.html">Future Tides: Revisiting the Systems Blind Spot</a></li>
-      <li><a href="GeistinduhShell.html">Geist in duh Shell</a></li>
-      <li><a href="HeavyTimberJointsUsingBlackThreadedPipeAPract.html">Heavy Timber Joints: A Practical Guide</a></li>
-      <li><a href="HellBentforCadre.html">Hell Bent for Cadre</a></li>
-      <li><a href="ItsOnlyaFeedbackLoop.html">It's Only a Feedback Loop</a></li>
-      <li><a href="OPenLetterTheil.html">Open Letter: Thiel</a></li>
-      <li><a href="ObviousproblemsareObvious.html">Obvious Problems are Obvious</a></li>
-      <li><a href="RETHINKINGCONFLICTTHEORYRETIRINGTHEMARXISTMIR.html">Rethinking Conflict Theory: Retiring the Marxist Mirage</a></li>
-      <li><a href="TldrGlobalCalories.html">Global Calorie Outlook 2025-2035</a></li>
-      <li><a href="WhatANimrod.html">What a Nimrod</a></li>
-      <li><a href="WhatAreWeDoingHereReally.html">What Are We Doing Here, Really?</a></li>
-      <li><a href="WoodCHuck.html">On the Chucking of Wood and the Existence of Woodchucks</a></li>
-      <li><a href="burnit.html">Burn It</a></li>
-      <li><a href="iran.html">Under the Surface: Iran’s Covert Engineering Autonomy</a></li>
-      <li><a href="mad.html">Mad</a></li>
-      <li><a href="vapor.html">Vapor Warfare: Distributed Engagement in the Age of Tactical Precision</a></li>
-    </ul>
-    <p class="file-note" style="margin-top:2rem;">
-    
-    
-    </p>
+  <div class="wrap">
+
+    <!-- Header / Nav -->
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>morse.works — Independent Thought</h1>
+      </div>
+      <nav aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="https://mrdahut.github.io/Writtings/">Stories Archive (GitHub Pages)</a>
+        <a href="https://github.com/MrDahut/Writtings">Source Repo</a>
+        <a href="Method.html">Methods (Thought Generation)</a>
+        <a href="Lesson.html">A Letter to My Child</a>
+      </nav>
+    </header>
+
+    <!-- Mission / Method -->
+    <section class="panel section" aria-labelledby="mission">
+      <h2 id="mission">Independent Thought</h2>
+      <p>— a public workshop for human-centered research, writing, and design — scaffolded by AI, governed by rigor.</p>
+    </section>
+
+    <section class="panel section grid" aria-labelledby="overview">
+      <div>
+        <h2 class="cap">🧭 Mission</h2>
+        <p class="muted">This site is a living case-study in the responsible use of artificial intelligence for augmenting human inquiry. Every word passes through research, interrogation, structural refinement, and conscious authorship before publication.</p>
+      </div>
+      <div>
+        <h2 class="cap">🔧 Our Method</h2>
+        <ul class="muted">
+          <li>Frame the Question — define unknowns and required evidence.</li>
+          <li>Interrogate the System — historical, legal, and technical probing with AI tools.</li>
+          <li>Draft the Skeleton — human-authored voice, pacing, logic.</li>
+          <li>Backfill with Support — AI surfaces gaps, typos, structural weak points.</li>
+          <li>Finalize and Publish — human editor retains responsibility; no hallucinations.</li>
+        </ul>
+        <p><a href="Method.html">Full methodology: Thought Generation, Not Content Generation.</a></p>
+      </div>
+    </section>
+
+    <section class="panel section" aria-labelledby="archive">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap">
+        <h2 id="archive" style="margin:0">Browse the Archive</h2>
+        <span class="pill">Writings hosted on GitHub Pages</span>
+      </div>
+      <div class="searchbar">
+        <input id="q" class="search" type="search" placeholder="Filter titles across all categories… (e.g., conflict, timber, dollar)">
+        <span class="muted" style="font-size:.92rem">Instant client-side filter</span>
+      </div>
+
+      <!-- Categories -->
+      <div id="cats" style="margin-top:12px">
+
+        <!-- Systems / Policy / Economics -->
+        <section class="section panel" data-cat="Systems">
+          <h3 class="cap">Systems • Policy • Economics</h3>
+          <ul>
+            <li><a href="CO2.html">Failure to Protect — CO₂ Deregulation and Legal Immunity</a></li>
+            <li><a href="TldrGlobalCalories.html">Global Calorie Outlook 2025–2035</a></li>
+            <li><a href="Hit.html">Ambush of the US Dollar</a></li>
+            <li><a href="FutureTidesRevisitingtheSystemsBlindSpotinU.html">Future Tides: Revisiting the Systems Blind Spot</a></li>
+            <li><a href="ItsOnlyaFeedbackLoop.html">It’s Only a Feedback Loop</a></li>
+            <li><a href="RETHINKINGCONFLICTTHEORYRETIRINGTHEMARXISTMIR.html">Rethinking Conflict Theory: Retiring the Marxist Mirage</a></li>
+            <li><a href="WhatAreWeDoingHereReally.html">What Are We Doing Here, Really?</a></li>
+            <li><a href="LINE.html">Line in the Western sands.</a></li>
+          </ul>
+        </section>
+
+        <!-- Engineering / Tech / Practice -->
+        <section class="section panel" data-cat="Engineering">
+          <h3 class="cap">Engineering • Tech • Practice</h3>
+          <ul>
+            <li><a href="BACN8.html">Simulation-Based Agent Modeling (SBAM) White Paper</a></li>
+            <li><a href="HeavyTimberJointsUsingBlackThreadedPipeAPract.html">Heavy Timber Joints: A Practical Guide</a></li>
+            <li><a href="vapor.html">Vapor Warfare: Distributed Engagement in the Age of Tactical Precision</a></li>
+            <li><a href="iran.html">Under the Surface: Iran’s Covert Engineering Autonomy</a></li>
+            <li><a href="Phae1.html">What the future holds.</a></li>
+          </ul>
+        </section>
+
+        <!-- Politics / Culture / Critique -->
+        <section class="section panel" data-cat="Politics">
+          <h3 class="cap">Politics • Culture • Critique</h3>
+          <ul>
+            <li><a href="newsom_colbert_axis.html">True ticket to ride</a></li>
+            <li><a href="Grift1.html">Grift Economy</a></li>
+            <li><a href="Ahem.html">Ahem—Um—Excuse Me Please, But If You Want to Make America Great Again</a></li>
+            <li><a href="OPenLetterTheil.html">Open Letter: Thiel</a></li>
+            <li><a href="ObviousproblemsareObvious.html">Obvious Problems are Obvious</a></li>
+            <li><a href="HellBentforCadre.html">Hell Bent for Cadre</a></li>
+            <li><a href="WhatANimrod.html">What a Nimrod</a></li>
+          </ul>
+        </section>
+
+        <!-- History / Anthropology / Society -->
+        <section class="section panel" data-cat="History">
+          <h3 class="cap">History • Anthropology • Society</h3>
+          <ul>
+            <li><a href="Savage_inheritance_cited.html">Our Savage Land — Part 1</a></li>
+            <li><a href="biology_of_a_savage_nation.html">Our Savage Land — Part 2</a></li>
+            <li><a href="Afra.html">Afra</a></li>
+          </ul>
+        </section>
+
+        <!-- Philosophy / Media / Personal -->
+        <section class="section panel" data-cat="Philosophy">
+          <h3 class="cap">Philosophy • Media • Personal</h3>
+          <ul>
+            <li><a href="GeistinduhShell.html">Geist in duh Shell</a></li>
+            <li><a href="CHrisC.html">Digital Spectacle and Structural Failure (Chris Chan)</a></li>
+            <li><a href="Mad.html">Mad</a></li>
+            <li><a href="WoodCHuck.html">On the Chucking of Wood and the Existence of Woodchucks</a></li>
+            <li><a href="Lesson.html">To: My, your, any child.</a></li>
+            <li><a href="burnit.html">Burn It</a></li>
+          </ul>
+        </section>
+
+        <!-- Singletons / Misc keep visible -->
+        <!-- (If any new pieces don’t fit, they’ll still show via search; we can add/rename categories anytime.) -->
+      </div>
+    </section>
+
+    <!-- Ethics / License / Contact -->
+    <section class="panel section grid" aria-labelledby="ethics">
+      <div>
+        <h2 class="cap">⚖️ Our Ethics</h2>
+        <p class="muted">We don’t conceal AI use. We disclose, constrain, and operationalize it so that machine scaffolding amplifies human judgment rather than replaces it.</p>
+      </div>
+      <div>
+        <h2 class="cap">📄 License &amp; Use</h2>
+        <p class="muted">All work is released under a conditional public license. Non-commercial and educational use is free with attribution.</p>
+        <p class="muted">Commercial use requires allocating 20% of gross revenue derived from this material to public-goods projects (health, literacy, nutrition, or direct aid to low-income communities).</p>
+      </div>
+    </section>
+
+    <section class="panel section" aria-labelledby="contact">
+      <h2 class="cap" id="contact">📬 Contact / Collaborate</h2>
+      <p class="muted">Collaborations, research commissions, or method transfer: <a href="mailto:contact@morse.works">contact@morse.works</a> or open an issue in the <a href="https://github.com/MrDahut/Writtings">GitHub repo</a>.</p>
+    </section>
+
+    <footer class="panel">
+      <div class="section">© <span id="y"></span> morse.works · Built with human intention and machine assistance.</div>
+    </footer>
   </div>
+
+  <script>
+    // year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // simple filter across all lists
+    const q = document.getElementById('q');
+    const sections = Array.from(document.querySelectorAll('[data-cat]'));
+    const rows = sections.flatMap(sec => Array.from(sec.querySelectorAll('li')));
+    q.addEventListener('input', () => {
+      const s = q.value.trim().toLowerCase();
+      rows.forEach(li => {
+        const txt = li.textContent.toLowerCase();
+        li.style.display = txt.includes(s) ? '' : 'none';
+      });
+    });
+  </script>
 </body>
 </html>
