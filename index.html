@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morse Works — Rural Development Studio</title>
+<meta name="description" content="Morse Works expands the productive capabilities of Appalachian communities by connecting resources, skills, production, and enterprise.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --lichen: #E9ECE5;
+    --ink: #17201B;
+    --spruce: #2F4A3A;
+    --bark: #6E5D4C;
+    --rule: #B9C2B8;
+    --rust: #A4502A;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--lichen);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+
+  a {
+    color: var(--rust);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
+
+  a:hover { color: var(--ink); }
+
+  :focus-visible {
+    outline: 2px solid var(--rust);
+    outline-offset: 3px;
+  }
+
+  .wrap {
+    width: min(68rem, 100% - 3rem);
+    margin-inline: auto;
+  }
+
+  /* Header */
+  header {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .masthead {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem 2rem;
+    padding: 1.5rem 0;
+  }
+
+  .wordmark {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  .wordmark span {
+    color: var(--spruce);
+    font-weight: 400;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.95rem;
+  }
+
+  nav a:hover { color: var(--rust); }
+
+  /* Hero */
+  .hero {
+    padding: clamp(4rem, 10vw, 8rem) 0 clamp(3rem, 7vw, 5rem);
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(2.5rem, 6.2vw, 4.75rem);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    margin: 0 0 1.75rem;
+    max-width: 17ch;
+    color: var(--ink);
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--spruce);
+  }
+
+  .lede {
+    font-size: 1.25rem;
+    line-height: 1.55;
+    max-width: 44ch;
+    margin: 0 0 2.25rem;
+    color: var(--ink);
+  }
+
+  .cta {
+    display: inline-block;
+    padding: 0.8rem 1.25rem;
+    background: var(--spruce);
+    color: var(--lichen);
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 2px;
+  }
+
+  .cta:hover {
+    background: var(--ink);
+    color: var(--lichen);
+  }
+
+  /* Sections */
+  section {
+    padding: clamp(3rem, 7vw, 5.5rem) 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: 2rem clamp(2rem, 6vw, 5rem);
+  }
+
+  h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 1.25;
+    margin: 0 0 0.4rem;
+    color: var(--ink);
+  }
+
+  p { margin: 0 0 1.1rem; max-width: 62ch; }
+  p:last-child { margin-bottom: 0; }
+
+  /* Mission */
+  .pull {
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 2.8vw, 2rem);
+    line-height: 1.3;
+    color: var(--spruce);
+    margin: 0 0 1.5rem;
+    max-width: 30ch;
+  }
+
+  /* Method: a real sequence, so numbering is earned */
+  .steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: step;
+    display: grid;
+    gap: 0;
+  }
+
+  .steps li {
+    counter-increment: step;
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: 0 1rem;
+    padding: 1.4rem 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .steps li:last-child { border-bottom: 1px solid var(--rule); }
+
+  .steps li::before {
+    content: counter(step, decimal-leading-zero);
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--rust);
+    padding-top: 0.2rem;
+  }
+
+  .steps p { margin: 0; color: var(--ink); }
+
+  /* Enterprise network */
+  .network {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    margin: 0 0 2rem;
+    border-top: 2px solid var(--spruce);
+  }
+
+  .network div {
+    padding: 1.25rem 1.25rem 0 0;
+  }
+
+  .network div + div {
+    padding-left: 1.25rem;
+    border-left: 1px solid var(--rule);
+  }
+
+  .network p { margin: 0; font-size: 0.95rem; }
+
+  .principles {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .principles li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: 1rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .principles strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* Partners table */
+  .partners {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.97rem;
+  }
+
+  .partners th,
+  .partners td {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.9rem 1rem 0.9rem 0;
+    border-top: 1px solid var(--rule);
+  }
+
+  .partners th {
+    font-weight: 600;
+    width: 32%;
+    color: var(--ink);
+  }
+
+  .partners td { color: var(--bark); }
+
+  .partners tr:last-child td,
+  .partners tr:last-child th { border-bottom: 1px solid var(--rule); }
+
+  /* Work and THC callout */
+  .work-list {
+    list-style: none;
+    margin: 0 0 2.5rem;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .work-list li {
+    padding-left: 1rem;
+    border-left: 2px solid var(--spruce);
+  }
+
+  .work-list p { margin: 0; }
+
+  .thc {
+    background: var(--spruce);
+    color: var(--lichen);
+    padding: clamp(1.75rem, 4vw, 2.75rem);
+    border-radius: 2px;
+  }
+
+  .thc h3 { color: var(--lichen); font-size: 1.6rem; }
+  .thc p { color: var(--lichen); opacity: 0.92; }
+  .thc a { color: var(--lichen); }
+  .thc a:hover { color: #fff; }
+
+  .thc .tag {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+  }
+
+  /* Contact */
+  .contact {
+    border-top: 2px solid var(--spruce);
+  }
+
+  .contact address {
+    font-style: normal;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+
+  .contact .big-mail {
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    color: var(--rust);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+
+  .contact .big-mail:hover { color: var(--ink); }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 1.75rem 0 2.5rem;
+    font-size: 0.9rem;
+    color: var(--bark);
+  }
+
+  /* Responsive */
+  @media (max-width: 860px) {
+    .split,
+    .principles li {
+      grid-template-columns: 1fr;
+    }
+
+    .network {
+      grid-template-columns: 1fr;
+    }
+
+    .network div,
+    .network div + div {
+      padding: 1.25rem 0;
+      border-left: none;
+    }
+
+    .network div + div {
+      border-top: 1px solid var(--rule);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .partners th,
+    .partners td {
+      display: block;
+      width: 100%;
+      padding: 0.25rem 0;
+    }
+
+    .partners tr { display: block; padding: 0.9rem 0; border-top: 1px solid var(--rule); }
+    .partners th { border: none; padding-bottom: 0.2rem; }
+    .partners td { border: none; padding-top: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap masthead">
+    <a class="wordmark" href="#top">Morse Works <span>Rural Development Studio</span></a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#network">Network</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <div class="wrap hero">
+    <h1>Expanding what communities can do <em>with what they have.</em></h1>
+    <p class="lede">
+      Morse Works helps Appalachian communities turn existing assets into lasting
+      economic opportunities, across natural resources, technical skills, production,
+      and enterprise.
+    </p>
+    <a class="cta" href="#contact">Start a conversation</a>
+  </div>
+
+  <section id="mission">
+    <div class="wrap split">
+      <h2>Our mission</h2>
+      <div>
+        <p class="pull">Most communities have the assets. What they often lack are the connections between them.</p>
+        <p>
+          Raw resources may lack processing infrastructure. Skilled people may lack
+          access to equipment, training, and markets. Morse Works works on these
+          structural gaps by cultivating practical capacity. We start with the
+          actual problem rather than a predetermined solution, bridge the missing
+          links, and make sure communities keep control and sustain progress long
+          after the project ends.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="method">
+    <div class="wrap split">
+      <div>
+        <h2>How we work</h2>
+        <p style="margin-top:1rem;color:var(--bark);">Every project starts from its real-world limits. We define the outcome, then build exactly what is needed to bridge the gap.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <p><strong>Define the objective.</strong> Set clear outcomes, target users, and success criteria, and cut unnecessary complexity.</p>
+        </li>
+        <li>
+          <p><strong>Understand conditions.</strong> Map local resources, infrastructure, costs, and existing institutional relationships.</p>
+        </li>
+        <li>
+          <p><strong>Isolate constraints.</strong> Identify the technical, operational, or market bottlenecks that are holding progress back.</p>
+        </li>
+        <li>
+          <p><strong>Develop practical solutions.</strong> Use existing local assets, adding or adapting only what is strictly necessary.</p>
+        </li>
+        <li>
+          <p><strong>Test in the field.</strong> Validate assumptions early through prototypes, skill trials, and market pilots under real conditions.</p>
+        </li>
+        <li>
+          <p><strong>Cultivate lasting capacity.</strong> Hand skills, systems, and operational responsibility fully to local leaders and institutions.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <h2>Across disciplines</h2>
+      <div>
+        <p>
+          A technical problem often doubles as an organizational or supply-chain
+          barrier, and solving one in isolation usually fails in practice. We analyze
+          problems across domains, design practical pathways forward, and bring in
+          targeted specialists when deeper expertise is needed.
+        </p>
+        <p><strong>The solution must fit the problem, and the project must fit the place.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="network">
+    <div class="wrap split">
+      <div>
+        <h2>An Appalachian network of enterprise</h2>
+      </div>
+      <div>
+        <p>
+          Our long-term aim is a regional network of more than 200 owner-operated and
+          employee-owned enterprises across the State of Franklin region. Inspired by
+          Spain's Mondragon Corporation, we are adapting cooperative principles to
+          Appalachian conditions, workforce traditions, and natural assets.
+        </p>
+
+        <div class="network" style="margin-top:2rem;">
+          <div>
+            <h3>Skills and capacity</h3>
+            <p>Training and technical know-how shared across member enterprises.</p>
+          </div>
+          <div>
+            <h3>Shared infrastructure</h3>
+            <p>Equipment and facilities that no single small business could carry alone.</p>
+          </div>
+          <div>
+            <h3>Markets and pilots</h3>
+            <p>Joint access to customers, tested before capital is committed.</p>
+          </div>
+        </div>
+
+        <ul class="principles">
+          <li>
+            <strong>Local ownership.</strong>
+            <span>Owner-operated and employee-owned models keep both wealth and decision-making inside the community.</span>
+          </li>
+          <li>
+            <strong>Cooperative autonomy.</strong>
+            <span>Each enterprise stays independent and collaborates where shared infrastructure or market access creates mutual value.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap split">
+      <div>
+        <h2>Current work</h2>
+        <p style="margin-top:1rem;color:var(--bark);">We are putting underused assets to work, starting with Appalachian hardwoods.</p>
+      </div>
+      <div>
+        <ul class="work-list">
+          <li>
+            <h3>Applied skills development</h3>
+            <p>Hands-on technical instruction delivered inside real production environments.</p>
+          </li>
+          <li>
+            <h3>Production and market piloting</h3>
+            <p>Testing manufacturing methods, unit economics, customer demand, and distribution channels before committing capital.</p>
+          </li>
+          <li>
+            <h3>Resource optimization</h3>
+            <p>Turning underused local timber into higher-value finished products.</p>
+          </li>
+        </ul>
+
+        <div class="thc">
+          <p class="tag">Initiative</p>
+          <h3>Tennessee Hardwood &amp; Carbon (THC)</h3>
+          <p>
+            THC unlocks the economic value of regional timber under the Tennessee Native
+            Species Lumber Act. It connects underused forestry resources with local
+            sawmills, technical workforce training, equipment access, and market development.
+          </p>
+          <p>
+            Today THC is an internal project of Morse Works. The long-term goal is an
+            independent 501(c)(3) nonprofit dedicated to regional timber industry development.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <h2>Who we work with</h2>
+      <div>
+        <table class="partners">
+          <tbody>
+            <tr>
+              <th scope="row">Academic institutions</th>
+              <td>Translating research into practical, field-tested applications.</td>
+            </tr>
+            <tr>
+              <th scope="row">Government agencies</th>
+              <td>Aligning public assets, infrastructure, and policy goals with practical execution.</td>
+            </tr>
+            <tr>
+              <th scope="row">Private businesses</th>
+              <td>Solving cross-disciplinary bottlenecks and evaluating new product lines.</td>
+            </tr>
+            <tr>
+              <th scope="row">Community organizations</th>
+              <td>Unlocking local assets and building internal capacity for self-directed growth.</td>
+            </tr>
+            <tr>
+              <th scope="row">Technical specialists</th>
+              <td>Fitting niche expertise into broader project designs.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <h2>Operating principles</h2>
+      <ul class="principles">
+        <li>
+          <strong>Begin with reality.</strong>
+          <span>Work from real ground conditions, not off-the-shelf templates.</span>
+        </li>
+        <li>
+          <strong>Build only what is needed.</strong>
+          <span>Avoid unnecessary technology, overhead, or complexity.</span>
+        </li>
+        <li>
+          <strong>Cultivate independence.</strong>
+          <span>Build capacity rather than dependency. Every project should stand on its own.</span>
+        </li>
+        <li>
+          <strong>Learn through application.</strong>
+          <span>Let practical trials and evidence, not assumptions, drive decisions.</span>
+        </li>
+        <li>
+          <strong>Keep people central.</strong>
+          <span>Real development lives in the skills and decision-making power of the people who run the systems.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap split">
+      <h2>Contact</h2>
+      <div>
+        <p>
+          Have a project, resource, or constraint worth investigating? We welcome
+          conversations with institutions, businesses, and community leaders ready
+          to build practical capacity.
+        </p>
+        <p>
+          <a class="big-mail" href="mailto:Shiloh@morse.works">Shiloh@morse.works</a>
+        </p>
+        <address style="margin-top:1.5rem;">
+          Morse Works, Rural Development Studio<br>
+          225 East Center Street, Kingsport, TN<br>
+          Located inside the Create Appalachia Incubator
+        </address>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Morse Works, serving Greater Appalachia from Kingsport, Tennessee.
+  </div>
+</footer>
+
+</body>
+</html>
